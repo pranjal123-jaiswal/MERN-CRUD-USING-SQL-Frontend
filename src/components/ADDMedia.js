@@ -58,13 +58,9 @@ const ADDMedia = () => {
         }
     
         const JSONBody = {
-          
           "productId": parseInt(selectedOption),
-          
           "mediaUrl": url,
           "media_id": media_id,
-     
-    
         }
     
         const userId = JSON.parse(localStorage.getItem('user'))._id;
@@ -78,12 +74,15 @@ const ADDMedia = () => {
           });
           if (response.ok) {
             console.log("ojk")
+            alert("Added succesful")
             // navigate("/");
           } else {
+            alert("Failed to add product")
             throw new Error('Failed to add product');
           }
         } catch (error) {
           console.error('Error adding product:', error);
+          alert("Failed to add product")
           // Handle error
         }
       };
@@ -93,7 +92,15 @@ const ADDMedia = () => {
           <h1>Add Media</h1>
      
     
-          <div className="select-container"> {/* Add a container for the dropdown */}
+          
+    
+          <input className='inputBox' type='text' name='media_id' value={formData.media_id} onChange={handleChange} placeholder='Enter media_id' />
+          {error && !formData.media_id && <span className='invalid-input'>Enter media_id</span>}
+    
+          <input className='inputBox' type='text' name='url' value={formData.url} onChange={handleChange} placeholder='Enter url' />
+          {error && !formData.url && <span className='invalid-input'>Enter url</span>}
+
+          <div className="inputBox"> {/* Add a container for the dropdown */}
       <select value={selectedOption} onChange={handleProductChange}>
         <option value="">Select an Product</option>
         {productList.map((option, index) => (
@@ -103,12 +110,6 @@ const ADDMedia = () => {
         ))}
       </select>
     </div>
-    
-          <input className='inputBox' type='text' name='media_id' value={formData.media_id} onChange={handleChange} placeholder='Enter media_id' />
-          {error && !formData.media_id && <span className='invalid-input'>Enter media_id</span>}
-    
-          <input className='inputBox' type='text' name='url' value={formData.url} onChange={handleChange} placeholder='Enter url' />
-          {error && !formData.url && <span className='invalid-input'>Enter url</span>}
     
     
           <button type='button' onClick={addProduct} className='appButton'>Add Media</button>

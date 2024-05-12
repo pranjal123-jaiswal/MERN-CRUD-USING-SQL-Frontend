@@ -163,6 +163,7 @@ const UpdateComponent = () => {
   // };
 
   return (
+    
     <div className='product'>
       <h1>Update Products</h1>
       <input className='inputBox' type='text' name='productName' value={formData.product_name} onChange={handleChange} placeholder='Enter product name' />

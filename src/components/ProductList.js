@@ -90,7 +90,7 @@ const ProductList = () => {
       <li>{item.category_name}</li>
       <li>{item.material_name}</li>
       <li>
-        <button onClick={() => deleteProduct(item.product_id)}>Delete</button>
+        {/* <button onClick={() => deleteProduct(item.product_id)}>Delete</button> */}
         <NavLink to={`/update/${item.product_id}`}>Update</NavLink>
       </li>
     </ul>

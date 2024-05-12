@@ -20,18 +20,18 @@ const Nav = () => {
     <li><NavLink to="/">Products</NavLink></li>
     <li><NavLink to="/add">Add Products</NavLink></li>
     <li><NavLink to="/update">Update Products</NavLink></li>
-    <li><NavLink to="/addMaterial">ADD Material</NavLink></li>
-    <li><NavLink to="/addCategory">ADD Category Products</NavLink></li>
-    <li><NavLink to="/addMedia">ADD Media</NavLink></li>
+    <li><NavLink to="/addMaterial">Add Material</NavLink></li>
+    <li><NavLink to="/addCategory">Add Category Products</NavLink></li>
+    <li><NavLink to="/addMedia">Add Media</NavLink></li>
     <li><NavLink to="/profile">Profile</NavLink></li>
-    <li><NavLink onClick={logout} >Logout </NavLink></li>
+    {/* <li><NavLink onClick={logout} >Logout </NavLink></li> */}
     </>
     :
 <>
-<ul className='nav-right'>
+{/* <ul className='nav-right'>
     <li><NavLink  to="/signup">Sign Up</NavLink></li>
     <li><NavLink  to="/login">Login</NavLink></li>
-    </ul>
+    </ul> */}
     </>
 }
 {/* 

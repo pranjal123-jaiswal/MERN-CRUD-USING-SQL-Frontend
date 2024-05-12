@@ -1,5 +1,6 @@
 import React, { useState , useEffect } from 'react'
 
+
 const Price = () => {
   const [category, setCategory] = useState([]);
   const [products , setProducts] = useState([])
@@ -24,9 +25,9 @@ async function getProducts() {
       <h1>Category</h1>
         <div className="container mb-5 mt-5">
   <div className="pricing card-deck flex-column flex-md-row mb-3">
-    
-    {products.map((item, index) => (
-      <div key={index} className="card card-pricing text-center px-3 mb-4">
+  {products.length > 0 ? (
+  products.map((item, index) => (
+    <div key={index} className="card card-pricing text-center px-3 mb-4">
       <span className="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">
         {item.category_name}
       </span>
@@ -51,7 +52,12 @@ async function getProducts() {
         </button>
       </div> */}
     </div>
-    ))}
+  ))
+) : (
+  <h2>NO DATA FOUND</h2>
+)}
+
+    
     
    
   </div>
@@ -64,9 +70,9 @@ async function getProducts() {
       <h1>Price</h1>
         <div className="container mb-5 mt-5">
   <div className="pricing card-deck flex-column flex-md-row mb-3">
-    
-    {products.map((item, index) => (
-      <div className="card card-pricing text-center px-3 mb-4">
+  {products.length > 0 ? (
+  products.map((item, index) => (
+    <div key={index} className="card card-pricing text-center px-3 mb-4">
       <span className="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">
         {item.category_name}
       </span>
@@ -75,7 +81,6 @@ async function getProducts() {
           className="h1 font-weight-normal text-primary text-center mb-0"
           data-pricing-value={15}
         >
-          {/* ₹<span className="price">0-500</span> */}
           <span className="h6 text-muted ml-2">0-500</span>
           <div className="price">{item.fivehundred}</div>
 
@@ -86,9 +91,12 @@ async function getProducts() {
           <div className="price">{item.onethousandPlus}</div>
         </h1>
       </div>
-      
     </div>
-    ))}
+  ))
+) : (
+  <h2>NO DATA FOUND</h2>
+)}
+
 
    
     {/* )} */}

@@ -39,12 +39,17 @@ const ADDMaterial = () => {
           });
           if (response.ok) {
             console.log("ojk")
+            alert("Addedd succesful")
+            alert()
             // navigate("/");
           } else {
-            throw new Error('Failed to add product');
+            alert("Failed to add product")
+            throw new Error('Failed to add');
+            
           }
         } catch (error) {
           console.error('Error adding product:', error);
+          alert("Error adding Material:")
           // Handle error
         }
       };

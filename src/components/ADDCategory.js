@@ -2,11 +2,8 @@ import React , {useState} from 'react'
 
 const ADDCategory = () => {
     const [formData, setFormData] = useState({
-        
-       
         category: '',
         categoryId: '',
-        
       });
       const [error, setError] = useState(false);
     
@@ -23,10 +20,8 @@ const ADDCategory = () => {
         }
     
         const JSONBody = {
-          
           "category": category,
           "categoryId": parseInt(categoryId),
-    
         }
     
         const userId = JSON.parse(localStorage.getItem('user'))._id;
@@ -39,13 +34,15 @@ const ADDCategory = () => {
             }
           });
           if (response.ok) {
-            console.log("ojk")
+            alert("Category Added")
             // navigate("/");
           } else {
+            alert('Failed to add product')
             throw new Error('Failed to add product');
           }
         } catch (error) {
           console.error('Error adding product:', error);
+          alert('Error adding product')
           // Handle error
         }
       };

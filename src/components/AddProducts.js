@@ -108,12 +108,15 @@ const AddProducts = () => {
       });
       if (response.ok) {
         console.log("ojk")
+        alert("Added Successfully");
         // navigate("/");
       } else {
+        alert("Failed to add product")
         throw new Error('Failed to add product');
       }
     } catch (error) {
       console.error('Error adding product:', error);
+      alert("Failed to add product")
       // Handle error
     }
   };
@@ -133,7 +136,7 @@ const AddProducts = () => {
       <input className='inputBox' type='text' name='price' value={formData.price} onChange={handleChange} placeholder='Enter product price' />
       {error && !formData.price && <span className='invalid-input'>Enter Valid price</span>}
 
-<div className="select-container"> {/* Add a container for the dropdown */}
+<div className="inputBox"> {/* Add a container for the dropdown */}
       <select value={categoryOption} onChange={handleCategoryChange}>
         <option value="">Select an Category</option>
         {categoryList.map((option, index) => (
@@ -144,7 +147,7 @@ const AddProducts = () => {
       </select>
     </div>
 
-    <div className="select-container"> {/* Add a container for the dropdown */}
+    <div className="inputBox"> {/* Add a container for the dropdown */}
       <select value={materialOption} onChange={handleMaterialChange}>
         <option value="">Select an Material</option>
         {materialList.map((option, index) => (
